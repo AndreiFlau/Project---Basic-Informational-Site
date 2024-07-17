@@ -16,9 +16,7 @@ const server = http.createServer((req, res) => {
       res.writeHead(200, { "Content-Type": "text/html" });
       res.end(data);
     });
-  }
-
-  if (req.url === "/about") {
+  } else if (req.url === "/about") {
     fs.readFile(path.join(__dirname, "about.html"), (err, data) => {
       if (err) {
         fs.readFile(path.join(__dirname, "404.html"), (err, data) => {
@@ -29,9 +27,7 @@ const server = http.createServer((req, res) => {
       res.writeHead(200, { "Content-Type": "text/html" });
       res.end(data);
     });
-  }
-
-  if (req.url === "/contact-me") {
+  } else if (req.url === "/contact-me") {
     fs.readFile(path.join(__dirname, "contact-me.html"), (err, data) => {
       if (err) {
         fs.readFile(path.join(__dirname, "404.html"), (err, data) => {
